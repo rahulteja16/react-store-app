@@ -30,14 +30,32 @@ export function checkShopAvailability(schedule = []) {
     }
 
     if (isOpen) {
-        return 'Store is open';
+        return { availablityMsg: 'Store is open', isOpen: true };
     }
 
     const nextAvailablity = getNextItem(schedule, i);
     const nextAvailablityDate = new Date(new Date().setDate(currentDate.getDate() + getJSDay(nextAvailablity.day)));
     const localeString = new Date(nextAvailablityDate.setHours(nextAvailablity.open.split(":")[0], 0, 0)).toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
 
-    return `Next opening time: ${dayName(nextAvailablityDate)} at ${localeString}`;
+    return { availablityMsg: `Next opening time: ${dayName(nextAvailablityDate)} at ${localeString}`, isOpen: false };
+}
+
+export function parseStoreResponse(storeResponse) {
+    let openedStores = [];
+    let closedStores = [];
+    let allUnavailable = true;
+    for (let i = 0; i < storeResponse.length; i++) {
+        const storeObj = storeResponse[i];
+        const availablityData = checkShopAvailability(storeObj.schedule)
+        if (availablityData.isOpen) {
+            allUnavailable = false;
+            openedStores.push(Object.assign({}, storeObj, availablityData));
+        } else {
+            closedStores.push(Object.assign({}, storeObj, availablityData));
+        }
+    }
+
+    return { data: openedStores.concat(closedStores), allUnavailable };
 }
 
 export function getNextItem(arr, index) {

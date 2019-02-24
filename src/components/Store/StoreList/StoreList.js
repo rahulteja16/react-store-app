@@ -6,36 +6,43 @@ import { sortSchedule } from '../../../utils';
 
 const StoreList = (props) => {
 
-
 	let storeEle;
-	let storesArr = [];
-
-
-
-	function filterStores(stores, value) {
-		return stores.filter(storeObj => storeObj.tags.includes(value));
-	}
-
-	function filterStoresHandler(val) {
-		let duplicateStoreArr = props.stores.slice();
-		storesArr = filterStores(props.stores, val);
-		console.log(storesArr);
-	}
-
 
 	if (props.stores.length <= 0) {
 		storeEle = <div>Loading</div>
-		// filterEle = null;
 	} else {
 
-		storeEle = props.stores.map((store) => {
-			return <StoreItem
-				key={store.id}
-				name={store.name}
-				desc={store.description}
-				tags={store.tags}
-				schedule={sortSchedule(store.schedule)} />;
-		});
+		if (props.filterValue === null || props.filterValue === 'clear all') {
+
+			storeEle = props.stores.map((store) => {
+				return <StoreItem
+					key={store.id}
+					name={store.name}
+					desc={store.description}
+					tags={store.tags}
+					availablityMsg={store.availablityMsg}
+					schedule={sortSchedule(store.schedule)} />;
+			});
+		} else {
+			let newPropArr = [];
+
+			props.stores.forEach((store) => {
+				if (store.tags.includes(props.filterValue)) {
+					newPropArr.push(store);
+				}
+			});
+
+			storeEle = newPropArr.map((store) => {
+				return <StoreItem
+					key={store.id}
+					name={store.name}
+					desc={store.description}
+					tags={store.tags}
+					availablityMsg={store.availablityMsg}
+					schedule={sortSchedule(store.schedule)} />;
+			});
+		}
+
 
 
 	}

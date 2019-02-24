@@ -4,7 +4,6 @@ import classes from './CategoryList.css';
 import Skeleton from 'react-loading-skeleton';
 
 const CategoryList = (props) => {
-    console.log(props.categories.length);
     let categoryEle;
     if (props.categories.length <= 0) {
         categoryEle = null;
@@ -13,10 +12,9 @@ const CategoryList = (props) => {
             return <CategoryItem
                 key={category.id}
                 name={category.name}
-                activeLogo={category.openIcon}
-                disableLogo={category.sleepIcon}
+                activeLogo={category.disabled ? category.sleepIcon : category.openIcon}
                 label={category.label}
-                showStore={() => props.showStore(category.name)}
+                showStore={() => props.showStore(category.name, category.id)}
             />
         })
     }

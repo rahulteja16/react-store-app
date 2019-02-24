@@ -15,12 +15,15 @@ const StoreFilters = (props) => {
         })
 
         filtersArr = [...new Set(filtersArr)];
+        filtersArr.push("clear all");
 
         filterEle = filtersArr.map((filterValue, index) => { return <Filter value={filterValue} filterStores={() => props.filterStoreHandler(filterValue)} key={index} /> })
     };
 
     return (
-        <div className={classes.filters}>{filterEle}</div>
+        <div className={classes.filters}>
+            {filterEle}
+        </div>
     )
 }
 

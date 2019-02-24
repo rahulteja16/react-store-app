@@ -14,7 +14,7 @@ const StoreItem = (props) => {
             <h3>{props.name}</h3>
             {tagVal}
             <p>{props.desc}</p>
-            <p>{checkShopAvailability(props.schedule)}</p>
+            <p>{props.availablityMsg}</p>
         </div>
     )
 }
