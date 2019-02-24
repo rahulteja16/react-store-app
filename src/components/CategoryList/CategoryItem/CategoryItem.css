@@ -1,0 +1,29 @@
+.card {
+    width: 100%;
+    padding-left: 1%;
+    margin: 0.5%;
+    border: 2px solid white;
+    border-radius: 6px;
+    background-color: #FCC253;    
+    color: white  
+}
+
+.logo {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    padding-bottom: 2%;
+}
+
+.heading {
+    display: inline-block;
+    font-size: 24px;
+    margin-left: 3%;
+}
+
+.click {
+    border: 2px solid #20a083;
+    background-color: #f7d086
+}

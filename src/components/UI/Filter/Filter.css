@@ -1,0 +1,13 @@
+.filter {
+    display: inline-block;
+    padding: 1%;
+    background-color: #20a083;
+    border-radius: 18px;
+    min-width: 14%;
+    text-align: center;
+    text-transform: UPPERCASE;
+    color: white;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    cursor: pointer;
+}
