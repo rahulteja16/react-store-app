@@ -3,7 +3,7 @@ import axios from 'axios';
 // import classes from './shop.css';
 import Store from '../../components/Store/Store';
 import CategoryList from '../../components/CategoryList/CategoryList';
-import Aux from '../../hoc/Auxx/Aux';
+import ODiv from '../../hoc/ODiv/ODiv';
 
 
 // class Shop extends Component {
@@ -80,10 +80,10 @@ function Shop() {
     }
 
     return (
-        <Aux>
+        <ODiv>
             <CategoryList showStore={storeListHandler} categories={categories} />
             <Store stores={stores} filterStoreHandler={filterStoreHandler} />
-        </Aux>
+        </ODiv>
     )
 }
 
