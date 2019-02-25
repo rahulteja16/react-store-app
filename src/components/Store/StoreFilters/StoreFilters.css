@@ -1,9 +1,6 @@
 .filters {
-    width: 80%;
+    width: 100%;
     display: inline-block;
-    position: absolute;
-    margin-top: 80px;
-    margin-left: 45px;
 }
 
 .filters i {
@@ -15,12 +12,6 @@
 
 @media only screen and (max-width: 499px) {
     .filters {
-        margin-left: 69px;
-        position: fixed;
         padding-left: 2%;
-        background-color: white;
-        padding-top: 5%;
-        margin-top: 55px;
-        box-shadow: 0 8px 8px -3px rgba(0,0,0,.2);
     }
   }

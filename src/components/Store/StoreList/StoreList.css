@@ -1,16 +1,7 @@
-.shell {
-    display: inline-block;
-    width: 80%;
-    margin-left: 50px;
-    position: absolute;
-    margin-top: 150px;
-}
+
 
 @media only screen and (max-width: 499px) {
     .shell {
-
-        margin-top: 190px;
-        padding-left: 8%;
-        z-index: -1;
+        margin-top: 10px;
     }
   }

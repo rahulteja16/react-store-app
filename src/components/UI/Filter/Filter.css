@@ -13,6 +13,12 @@
     border: 2px solid #1fa082;
 }
 
+.selected {
+    background-color: #1fa082;
+    color: white;
+    box-shadow: 0 -3px 15px 0 rgba(0, 0, 0, 0.2), 0 2px 23px 0 rgba(0, 0, 0, 0.19);
+}
+
 
 .filter:hover {
     box-shadow: 0 -3px 15px 0 rgba(0, 0, 0, 0.2), 0 2px 23px 0 rgba(0, 0, 0, 0.19);

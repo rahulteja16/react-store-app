@@ -1,6 +1,7 @@
 .App {
   font-family: 'Ubuntu', sans-serif;
-  position: relative
+  position: relative;
+  max-width: 100%;
 }
 
 @media only screen and (max-width: 499px) {

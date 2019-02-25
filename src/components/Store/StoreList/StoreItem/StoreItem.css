@@ -43,6 +43,10 @@
         margin-left: 8px;
     }
 
+    .box {
+        width: 100%;
+    }
+
     .msg {
         display: block;
     position: inherit;

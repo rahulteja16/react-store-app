@@ -4,9 +4,7 @@ import classes from './Header.css';
 const Header = (props) => {
     return (
         <header className={classes.Toolbar}>
-            <nav className={classes.DesktopOnly}>
-                Star Cadet
-            </nav>
+            <h3>Star Cadet</h3>
         </header>
     )
 }

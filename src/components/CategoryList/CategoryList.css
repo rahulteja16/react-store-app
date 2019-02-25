@@ -1,11 +1,12 @@
 .shell {
     display: inline-block;
     width: 15%;
-    margin-top: 55px;
-    height: 93vh;
+    height: 100vh;
     border: 2px solid #1fa082;
     box-shadow: 8px 8px 8px -1px rgba(0,0,0,.2);
     background-color: #1fa082;
+    position: fixed;
+    padding-top: 70px;
 }
 
 

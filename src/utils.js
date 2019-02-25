@@ -18,13 +18,17 @@ export function checkShopAvailability(schedule = []) {
     let isOpen = false;
     let i;
 
-    for (i = 0; i < schedule.length; i++) {
-        const scheduleNow = schedule[i];
-        if (getJSDay(scheduleNow.day) == currentDay) {
-            const shopOpenTime = new Date(new Date().setHours(scheduleNow.open.split(":")[0], 0, 0));
-            const shopCloseTime = new Date(new Date().setHours(scheduleNow.close.split(":")[0], 0, 0));
-            if ((shopOpenTime < currentDate) && (shopCloseTime > currentDate)) {
-                isOpen = true;
+    if (schedule.length <= 0) {
+        isOpen = true;
+    } else {
+        for (i = 0; i < schedule.length; i++) {
+            const scheduleNow = schedule[i];
+            if (getJSDay(scheduleNow.day) == currentDay) {
+                const shopOpenTime = new Date(new Date().setHours(scheduleNow.open.split(":")[0], 0, 0));
+                const shopCloseTime = new Date(new Date().setHours(scheduleNow.close.split(":")[0], 0, 0));
+                if ((shopOpenTime < currentDate) && (shopCloseTime > currentDate)) {
+                    isOpen = true;
+                }
             }
         }
     }

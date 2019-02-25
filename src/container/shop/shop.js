@@ -10,6 +10,7 @@ function Shop() {
     const [stores, setStores] = useState([]);
     const [error, setError] = useState(false);
     const [filterValue, setFilterValue] = useState(null)
+    const [selectedFilter, setSelectedFilter] = useState(null)
 
     useEffect(() => {
         axios.get('http://localhost:3000/categories')
@@ -44,13 +45,14 @@ function Shop() {
 
     function filterStoreHandler(val) {
         setFilterValue(val);
+        setSelectedFilter(val);
     }
 
     return (
         <React.Fragment>
             <Header />
             <CategoryList showStore={storeListHandler} categories={categories} />
-            <Store stores={stores} filterStoreHandler={filterStoreHandler} filterValue={filterValue} />
+            <Store stores={stores} filterStoreHandler={filterStoreHandler} filterValue={filterValue} selectedFilter={selectedFilter} />
         </React.Fragment>
     )
 }
