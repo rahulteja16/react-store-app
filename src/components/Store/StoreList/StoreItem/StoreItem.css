@@ -2,6 +2,53 @@
     text-transform: capitalize;
     color: #20a083;
     font-weight: 500;
-    margin-top: -1.5%;
+    margin-top: -20px;
     font-size: 14px;
+    margin-left: 30px;
 }
+
+.heading {
+    margin-left : 30px;
+    text-transform: capitalize;
+}
+
+.box{
+    border: 2px solid #FCC253;
+    border-radius: 11px;
+    margin-bottom: 1%;
+    position: relative;
+    width: 95%;
+}
+
+.box:hover {
+    box-shadow: 0 -3px 15px 0 rgba(0, 0, 0, 0.2), 0 2px 23px 0 rgba(0, 0, 0, 0.19);
+}
+
+.desc {
+    margin-left : 30px;
+    font-style: italic;
+}
+
+.msg {
+    position: absolute;
+    left: 60%;
+    top: 0;
+    text-transform: CAPITALIZE;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+@media only screen and (max-width: 499px) {
+    .heading , .desc, .tags {
+        margin-left: 8px;
+    }
+
+    .msg {
+        display: block;
+    position: inherit;
+    left: 8px;
+    }
+
+  }
+
+

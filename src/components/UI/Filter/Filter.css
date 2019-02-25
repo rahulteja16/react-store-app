@@ -1,13 +1,27 @@
 .filter {
     display: inline-block;
-    padding: 1%;
-    background-color: #20a083;
+    padding: 10px;
+    background-color: white;
     border-radius: 18px;
-    min-width: 14%;
+    min-width: 4%;
     text-align: center;
     text-transform: UPPERCASE;
-    color: white;
+    color: #1fa082;
     margin-right: 1%;
     margin-bottom: 1%;
     cursor: pointer;
+    border: 2px solid #1fa082;
 }
+
+
+.filter:hover {
+    box-shadow: 0 -3px 15px 0 rgba(0, 0, 0, 0.2), 0 2px 23px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+@media only screen and (max-width: 499px) {
+    .filter {
+        padding: 4px;
+    }
+  }

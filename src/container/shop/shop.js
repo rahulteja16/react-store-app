@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Store from '../../components/Store/Store';
 import CategoryList from '../../components/CategoryList/CategoryList';
-import ODiv from '../../hoc/ODiv/ODiv';
 import { parseStoreResponse } from '../../utils';
+import Header from '../../components/UI/Header/Header';
 
 function Shop() {
     const [categories, setCategories] = useState([]);
@@ -42,20 +42,16 @@ function Shop() {
             })
     }
 
-    function filterStores(stores = [], value = "") {
-        return stores.filter(storeObj => storeObj.tags.includes(value));
-    }
-
     function filterStoreHandler(val) {
         setFilterValue(val);
-        // setStores(filterStores(stores, val));
     }
 
     return (
-        <ODiv>
+        <React.Fragment>
+            <Header />
             <CategoryList showStore={storeListHandler} categories={categories} />
             <Store stores={stores} filterStoreHandler={filterStoreHandler} filterValue={filterValue} />
-        </ODiv>
+        </React.Fragment>
     )
 }
 

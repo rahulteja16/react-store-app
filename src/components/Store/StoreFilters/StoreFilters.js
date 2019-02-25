@@ -22,6 +22,7 @@ const StoreFilters = (props) => {
 
     return (
         <div className={classes.filters}>
+            <i className="fa fa-filter"></i>
             {filterEle}
         </div>
     )

@@ -6,15 +6,16 @@ const StoreItem = (props) => {
 
     let tagVal;
     if (props.tags.length > 0) {
-        tagVal = <p className={classes.tags}>{props.tags.join(' , ')}</p>
+        tagVal = <p className={classes.tags}><i className="fa fa-tags" aria-hidden="true"></i> {props.tags.join(' , ')}</p>
     }
 
     return (
-        <div>
-            <h3>{props.name}</h3>
+        <div className={classes.box}>
+            <h3 className={classes.heading}>{props.name}</h3>
             {tagVal}
-            <p>{props.desc}</p>
-            <p>{props.availablityMsg}</p>
+            <p className={classes.desc}>{props.desc}</p>
+            <p className={classes.msg}><i className="fa fa-shopping-cart"></i> {props.availablityMsg}</p>
+
         </div>
     )
 }

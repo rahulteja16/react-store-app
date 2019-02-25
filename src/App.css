@@ -2,3 +2,10 @@
   font-family: 'Ubuntu', sans-serif;
   position: relative
 }
+
+@media only screen and (max-width: 499px) {
+  /* For mobile phones: */
+  .App {
+    max-width:95%;
+  }
+}
