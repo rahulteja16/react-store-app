@@ -28,13 +28,19 @@ const StoreFilters = (props) => {
         classesArr = [classes.filters];
     }
 
-    return (
-        <div className={classesArr.join(' ')}>
-            <i className="fa fa-filter"></i>
-            {filterEle}
-            <span onClick={() => props.filterStoreHandler('clear all')}><i className="fa fa-times" aria-hidden="true"></i></span>
-        </div>
-    )
+    if (filtersArr.length > 0) {
+
+        return (
+
+            <div className={classesArr.join(' ')}>
+                <i className="fa fa-filter"></i>
+                {filterEle}
+                <span onClick={() => props.filterStoreHandler('clear all')}><i className="fa fa-times" aria-hidden="true"></i></span>
+            </div>
+        )
+
+    }
+    return null;
 }
 
 export default StoreFilters;

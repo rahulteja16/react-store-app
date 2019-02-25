@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import classes from './shop.css';
 import Store from '../../components/Store/Store';
 import CategoryList from '../../components/CategoryList/CategoryList';
 import { parseStoreResponse } from '../../utils';
@@ -17,12 +18,17 @@ function Shop() {
         axios.get('http://localhost:3000/categories')
             .then(response => {
                 setCategories(response.data.categories);
-                storeListHandler(response.data.categories[0].name);
             })
             .catch(error => {
                 setError({ error: true })
             })
     }, []);
+
+    useEffect(() => {
+        if (categories.length > 0) {
+            storeListHandler(categories[0].name, categories[0].id);
+        }    
+    }, [categories]);
 
     function storeListHandler(val, catId) {
         setSelectedCategory(val);
@@ -36,6 +42,7 @@ function Shop() {
                             newCategories[i] = Object.assign({}, { disabled: true }, newCategories[i]);
                         }
                     }
+
                     setCategories(newCategories);
                 }
                 setStores(data);
@@ -53,8 +60,10 @@ function Shop() {
     return (
         <React.Fragment>
             <Header />
-            <CategoryList showStore={storeListHandler} categories={categories} selectedCategory={selectedCategory} />
-            <Store stores={stores} filterStoreHandler={filterStoreHandler} filterValue={filterValue} selectedFilter={selectedFilter} />
+            <div className={classes.bodyContent}>
+                <CategoryList showStore={storeListHandler} categories={categories} selectedCategory={selectedCategory} />
+                <Store stores={stores} filterStoreHandler={filterStoreHandler} filterValue={filterValue} selectedFilter={selectedFilter} />
+            </div>
         </React.Fragment>
     )
 }

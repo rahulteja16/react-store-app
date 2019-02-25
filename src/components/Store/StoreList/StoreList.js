@@ -39,6 +39,7 @@ const StoreList = (props) => {
 					name={store.name}
 					desc={store.description}
 					tags={store.tags}
+					isOpen={store.isOpen}
 					availablityMsg={store.availablityMsg}
 					schedule={sortSchedule(store.schedule)} />;
 			});

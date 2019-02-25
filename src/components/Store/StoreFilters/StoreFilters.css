@@ -1,6 +1,7 @@
 .filters {
     width: 100%;
     display: inline-block;
+    padding-left: 5%;
 }
 
 .filters i {

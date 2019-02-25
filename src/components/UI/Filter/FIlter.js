@@ -8,9 +8,9 @@ const Filter = (props) => {
         selectedClasses = [classes.filter, classes.selected]
     }
     return (
-        <div className={selectedClasses.join(' ')} onClick={props.filterStores}>
+        <span className={selectedClasses.join(' ')} onClick={props.filterStores}>
             {props.value}
-        </div>
+        </span>
     )
 }
 
