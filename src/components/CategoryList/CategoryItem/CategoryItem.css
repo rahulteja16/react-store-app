@@ -7,6 +7,9 @@
     color: #FCC253;
     cursor: pointer;
 }
+.selected {
+    color: white;
+}
 
 .card:hover {
     color: white;

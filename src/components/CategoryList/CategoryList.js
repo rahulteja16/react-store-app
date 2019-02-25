@@ -15,6 +15,7 @@ const CategoryList = (props) => {
                 activeLogo={category.disabled ? category.sleepIcon : category.openIcon}
                 label={category.label}
                 showStore={() => props.showStore(category.name, category.id)}
+                selectedCategory={props.selectedCategory}
             />
         })
     }

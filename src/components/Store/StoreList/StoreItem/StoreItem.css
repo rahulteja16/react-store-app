@@ -38,6 +38,11 @@
     font-weight: 600;
 }
 
+.closed {
+    pointer-events: none;
+    opacity: 0.3;
+}
+
 @media only screen and (max-width: 499px) {
     .heading , .desc, .tags {
         margin-left: 8px;

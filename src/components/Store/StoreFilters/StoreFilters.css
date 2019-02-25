@@ -9,6 +9,18 @@
     color: #1fa082;
 }
 
+.remove{
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 2%;
+    color: #E53935;
+}
+
+.remove i , .remove span {
+    display: none;
+}
+
+
 
 @media only screen and (max-width: 499px) {
     .filters {
