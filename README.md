@@ -3,7 +3,7 @@
 
 ### Installing the project
 
-clone or download the project and run foollowing commands:
+clone or download the project and run following commands:
 ```
 npm install
 npm start 
@@ -26,9 +26,9 @@ npm start
 
 ## Use Cases:
 1. Store that is open will display the message saying "Store is Open"
-2. Closed store displat the next opening time of the store.
-3. All the stores are filtered according to store time, i.e closed stores are pused to the bottom.
-4. If all the stores arre closed, then a message pops up saying, "All stores are colsed" and image of category changes to sleep image.
+2. Closed store display the next opening time of the store.
+3. All the stores are filtered according to store time, i.e closed stores are pushed to the bottom.
+4. If all the stores are closed, then a message pops up saying, "All stores are colsed" and image of category changes to sleep image.
 5. Every category can be filtered by tags.
-6. Special care has been taken in terms of UI/UX to helight the workflows of the application.
+6. Special care has been taken in terms of UI/UX to highlight the workflow of the application.
 
