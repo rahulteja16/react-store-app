@@ -1,7 +1,8 @@
 import React from 'react';
+import Skeleton from 'react-loading-skeleton';
+
 import CategoryItem from './CategoryItem/CategoryItem';
 import classes from './CategoryList.css';
-import Skeleton from 'react-loading-skeleton';
 
 const CategoryList = (props) => {
     let categoryEle;
@@ -22,7 +23,7 @@ const CategoryList = (props) => {
 
     return (
         <div className={classes.shell}>
-            {categoryEle || <Skeleton count={15} height={80} duration={2} />}
+            {categoryEle || <Skeleton count={6} height={60} duration={2} />}
         </div>
     )
 }

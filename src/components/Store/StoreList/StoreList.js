@@ -1,7 +1,8 @@
 import React from 'react';
+import Skeleton from 'react-loading-skeleton';
+
 import Classes from './StoreList.css';
 import StoreItem from './StoreItem/StoreItem';
-import Filter from '../../UI/Filter/FIlter';
 import { sortSchedule } from '../../../utils';
 
 const StoreList = (props) => {
@@ -9,7 +10,7 @@ const StoreList = (props) => {
 	let storeEle;
 
 	if (props.stores.length <= 0) {
-		storeEle = <div>Loading</div>
+		storeEle = <Skeleton count={6} height={60} duration={2} />;
 	} else {
 
 		if (props.filterValue === null || props.filterValue === 'clear all') {
@@ -45,19 +46,13 @@ const StoreList = (props) => {
 			});
 		}
 
-
-
 	}
 
 	return (
 		<div className={Classes.shell}>
-			{/* {filterEle} */}
 			{storeEle}
 		</div>
 	)
 }
-
-
-
 
 export default StoreList;

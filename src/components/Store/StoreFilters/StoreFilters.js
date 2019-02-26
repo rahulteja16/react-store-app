@@ -20,6 +20,7 @@ const StoreFilters = (props) => {
 
         filtersArr = [...new Set(filtersArr)];
     };
+
     if (closedCounter === props.stores.length) {
         classesArr = [classes.filters, classes.remove];
         filterEle = <div>All stores are closed.</div>;
@@ -29,16 +30,13 @@ const StoreFilters = (props) => {
     }
 
     if (filtersArr.length > 0) {
-
         return (
-
             <div className={classesArr.join(' ')}>
                 <i className="fa fa-filter"></i>
                 {filterEle}
                 <span onClick={() => props.filterStoreHandler('clear all')}><i className="fa fa-times" aria-hidden="true"></i></span>
             </div>
         )
-
     }
     return null;
 }

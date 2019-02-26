@@ -7,9 +7,19 @@
     padding-left: 15%;
 }
 
-@media only screen and (max-width: 499px) {
- .storeBox {
-    padding-left: 20%;
- }
+.LoaderPos {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+}
 
+.opacityBox {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+@media only screen and (max-width: 499px) {
+    .storeBox {
+    padding-left: 20%;
+    }
 }

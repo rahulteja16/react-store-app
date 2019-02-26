@@ -1,6 +1,5 @@
 import React from 'react';
 import classes from './StoreItem.css';
-import { checkShopAvailability } from '../../../../utils';
 
 const StoreItem = (props) => {
 

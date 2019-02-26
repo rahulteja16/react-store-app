@@ -24,8 +24,6 @@
     box-shadow: 0 -3px 15px 0 rgba(0, 0, 0, 0.2), 0 2px 23px 0 rgba(0, 0, 0, 0.19);
 }
 
-
-
 @media only screen and (max-width: 499px) {
     .filter {
         padding: 4px;

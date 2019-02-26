@@ -13,6 +13,8 @@ function Shop() {
     const [filterValue, setFilterValue] = useState(null)
     const [selectedFilter, setSelectedFilter] = useState(null)
     const [selectedCategory, setSelectedCategory] = useState(null)
+    const [showLoader, setShowLoader] = useState(false)
+
 
     useEffect(() => {
         axios.get('http://localhost:3000/categories')
@@ -27,10 +29,11 @@ function Shop() {
     useEffect(() => {
         if (categories.length > 0) {
             storeListHandler(categories[0].name, categories[0].id);
-        }    
+        }
     }, [categories]);
 
     function storeListHandler(val, catId) {
+        setShowLoader(true);
         setSelectedCategory(val);
         axios.get(`http://localhost:3000/stores?category=${val}`)
             .then(response => {
@@ -46,9 +49,11 @@ function Shop() {
                     setCategories(newCategories);
                 }
                 setStores(data);
+                setShowLoader(false);
             })
             .catch(error => {
                 setError({ error: true })
+                setShowLoader(false);
             })
     }
 
@@ -62,7 +67,7 @@ function Shop() {
             <Header />
             <div className={classes.bodyContent}>
                 <CategoryList showStore={storeListHandler} categories={categories} selectedCategory={selectedCategory} />
-                <Store stores={stores} filterStoreHandler={filterStoreHandler} filterValue={filterValue} selectedFilter={selectedFilter} />
+                <Store stores={stores} filterStoreHandler={filterStoreHandler} filterValue={filterValue} selectedFilter={selectedFilter} showLoader={showLoader} />
             </div>
         </React.Fragment>
     )
